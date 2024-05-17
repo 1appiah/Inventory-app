@@ -1,0 +1,18 @@
+
+{% extends "partials/base.html" %}
+<title>{% block title %}Home page{% endblock title %}
+
+
+
+
+    {% block content %}
+
+    {% if user.is_authenticated and user.is_staff and user.is_superuser %}
+
+
+    {% include "partials/topnav.html" %}
+<h1 class="w3-green">Gideon Appiah</h1>
+{% else %}
+{% include "dashboard/staff_index.html" %}
+{% endif %}
+    {% endblock content %}    

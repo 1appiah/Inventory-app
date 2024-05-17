@@ -1,0 +1,46 @@
+{% extends "partials/base.html" %}
+
+<title>{% block title %}ORDER{% endblock title %}
+
+{% block content %}
+{% include "partials/topnav.html" %}
+    <nav class="w3-margin  w3-row-padding">
+        <div class="w3-col l2 ">
+            <div class=" w3-container">
+                
+            </div>
+            
+        </div>
+        <div class="w3-col l10">
+            <table class="w3-table w3-card">
+                <thead class="w3-blue">
+                    <tr>
+                     
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>order by</th>
+                    <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody class="w3-white w3-padding-24">
+                    {% for order in orders %}
+                    <tr>
+                        <div>
+                        
+                        <td class="">{{order.product}}</td>
+                        <td class="">{{order.product.category}}</td>
+                        <td class="">{{order.order_quantity}}</td>
+                        <td class="">{{order.staff.username}}</td>
+                        <td class="">{{order.date}}</td>
+                        </div>
+                    </tr>
+                    {% endfor %}
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    
+    {% endblock content %}
+    

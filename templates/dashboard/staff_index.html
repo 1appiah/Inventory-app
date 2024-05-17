@@ -1,0 +1,56 @@
+{% load crispy_forms_tags %}
+<nav class="w3-margin  w3-row-padding">
+    <div class="w3-col l3">
+        <div class="w3-light-grey w3-container">
+            <h6>Make Request</h6>
+        </div>
+        <div class="w3-padding w3-white">
+            <form method='POST'>
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" class="w3-button w3-light-blue w3-center w3-block w3-section w3-small">
+                    Make Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="w3-col l9 ">
+        <div class="w3-light-grey w3-container">
+            <h6>Orders Records</h6>
+
+        </div>
+        <div class="w3-white w3-padding-large">
+            <table class="w3-table w3-bordered">
+                <thead class=" w3-container">
+                    <tr class="w3-light-blue ">
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    {% if order.staff == user %}
+                    <tr class="">
+                        
+                        <td>{{order.product.name}}</td>
+                        <td>{{order.product.category}}</td>
+                        <td>{{order.order_quantity}}</td>
+                        <td>{{order.date}}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    <tbody>
+
+            </table>
+
+        </div>
+
+        
+     </div>
+        
+
+
+</nav>

@@ -1,0 +1,77 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+
+<title>{% block title %}Product{% endblock title %}
+
+    {% block content %}
+    {% include "partials/topnav.html" %}
+    <nav class="w3-margin  w3-row-padding">
+        <div class="w3-col l3  ">
+            {% for message in messages %}
+            {% if message %}
+            <div style="background-color:rgba(0,255,0, 0.2)" class=" w3-opacity w3-section w3-container">
+                <h6>
+                    {{message}}
+                </h6>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="w3-white w3-container">
+                <h6 class="">
+                    Add Products
+                </h6> 
+            </div>
+            <div class="w3-white"> 
+                <form class="w3-container" method="POST">
+                    {% csrf_token %}
+                   {{form|crispy}} 
+                    
+                    <button type="submit" class="w3-button w3-block w3-section w3-green w3-center">Add </button>
+                    
+                </form>
+            </div>
+            
+        </div>
+        <div class="w3-col l9">
+            
+            <table class="w3-table w3-bordered w3-card">
+                <thead class="w3-blue">
+                    <tr>
+                     
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody class="w3-white w3-padding-24">
+                    {% for dats  in items %}
+                    <tr>
+                        <div>
+                        
+                        <td class="">{{dats.name}}</td>
+                        <td class="">{{dats.category}}</td>
+                        <td class="">{{dats.quantity}}</td>
+                        <td>
+                            <a href='{% url "dashboard-updatepro" dats.id %}' class="w3-button w3-tiny w3-blue">Edit</a>
+                            <a href='{% url "dashboard-deletepro" dats.id %}' class="w3-button w3-tiny w3-red">Delete</a>
+                            
+                        </td>
+                        
+                        </div>
+                        
+                    </tr>
+                    
+                    {% endfor %}
+                    
+                    
+                    
+                </tbody>
+            </table>
+    
+        </div>
+    </nav>
+    {% endblock content %}
+
+    

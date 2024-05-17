@@ -1,0 +1,42 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+
+<div class="w3-row-padding w3-margin">
+    <div class="w3-col l3 container">
+        <div class="w3-container">
+        
+        </div>
+    </div>
+    
+    <div class="w3-col l9">
+        <div class="w3-light-blue w3-container">
+            <h6>Profile Page</h6>
+        </div>
+        <div class="w3-white w3-container w3-row ">
+            <div class="w3-twothird">
+                <div>
+                    <h6>Profile Information</h6>
+                        <hr>
+                     <form method="POST" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        {{form1|crispy}}
+                        {{form2|crispy}}
+                        <button type="submit">Save</button>
+                     </form>   
+                </div>
+                
+
+                   
+           
+            
+            
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

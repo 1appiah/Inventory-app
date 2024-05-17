@@ -1,0 +1,92 @@
+{% extends "partials/base.html" %}
+
+<title>{% block title %}Staff Page{% endblock title %}
+
+    {% block content %}
+    {% include "partials/topnav.html" %}
+    <nav class="w3-margin  w3-row-padding">
+        <div class="w3-col l2 ">
+            <div class=" w3-container">
+                
+            </div>
+            
+        </div>
+        <div class="w3-col l10">
+            
+<div class="w3-row-padding w3-margin">
+    <div class="w3-col l3 container">
+        <div class="w3-container">
+        
+        </div>
+    </div>
+    
+    <div class="w3-col l9">
+        <div class="w3-light-blue w3-container">
+            <h6>Profile Page</h6>
+        </div>
+        <div class="w3-white w3-container w3-row ">
+            <div class="w3-twothird">
+                <div>
+                    <h6>Profile Information</h6>
+                        <hr>
+                </div>
+                <div>
+                    <div class="w3-row w3-container">
+                        <div class="w3-third ">
+                            <h6><b>Name</b></h6>
+                        </div>
+                         
+                        <div class="w3-twothird">
+                            <h6>{{workers.username}}</h6>
+                        </div>   
+                    </div>
+                    <!---->
+                    <div class="w3-row w3-container">
+                        <div class="w3-third ">
+                            <h6><b>Email</b></h6>
+                        </div>
+                         
+                        <div class="w3-twothird">
+                            <h6>{{workers.email}}</h6>
+                        </div>   
+                    </div>
+                    <!---->
+                    <div class="w3-row w3-container">
+                        <div class="w3-third ">
+                            <h6><b>Phone</b></h6>
+                        </div>
+                         
+                        <div class="w3-twothird">
+                            <h6>{{workers.profile.phone}}</h6>
+                        </div>   
+                    </div>
+                    <!---->
+                    <div class="w3-row w3-container">
+                        <div class="w3-third ">
+                            <h6><b>Address</b></h6>
+                        </div>
+                         
+                        <div class="w3-twothird">
+                            <h6>{{workers.profile.address}}</h6>
+                        </div>   
+                    </div>
+                    <!---->
+
+                </div>
+           
+            </div>
+            <!---->
+            <div class="w3-third w3-container">
+              <div class="w3-section">
+                <img alt="vim" src="{{workers.profile.image.url}}" style="max-width:100%">
+              </div>  
+            </div>
+            
+            
+        </div>
+
+    </div>
+</div>
+        </div>
+    
+    {% endblock content %}

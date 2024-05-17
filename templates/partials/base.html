@@ -1,0 +1,17 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href='{% static "/w3.css" %}'>
+    </head>
+    <body>    
+{% include "partials/nav.html" %}
+
+
+{% block content %}
+
+{% endblock content %}
+    </body>
+
+</html>

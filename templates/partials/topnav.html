@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Responsive Contact Us Page</title>
+    <link rel="stylesheet" href='{% static "/w3.css" %}'>
+
+    <style>
+        
+    </style>
+   
+</head>
+<body class="w3-grey">
+<nav class="w3-margin  w3-row-padding">
+    <div class="w3-col l2 ">
+        <div class="w3-blue w3-container">
+            <h6 class="">
+                Information
+            </h6> 
+        </div>
+        <div class="w3-white w3-container">
+            <p class="w3-section">
+                This is the info site for you
+            </p>
+        </div>
+    </div>
+    <div class="w3-col l10">
+        <div class="w3-blue w3-container">
+            <h6>
+                Statistics
+            </h6>
+        </div>
+        <div class="w3-container w3-white w3-row-padding">
+            <div class="w3-third w3-section">
+                <a class="w3-button  w3-hover-white w3-card w3-center w3-block" href='{% url "dashboard-staff" %}'>
+                    <span>Staff</span>
+                    <br>
+                    <span>4</span>
+                </a>
+            </div>
+            <div class="w3-third w3-section ">
+                <a class="w3-button w3-hover-white w3-card w3-center w3-block" href='{% url "dashboard-product" %}'>
+                    <span>Products</span>
+                    <br>
+                    <span>4</span>
+                </a>
+            </div>
+            <div class="w3-third w3-section ">
+                <a class="w3-button w3-hover-white w3-card w3-center w3-block" href='{% url "dashboard-order" %}'>
+                    <span>Orders</span>
+                    <br>
+                    <span>4</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+
+
+
+
+
+
+
+
+</html>

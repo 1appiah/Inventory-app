@@ -1,0 +1,41 @@
+{% extends "partials/base.html" %}
+
+<title>{% block title %}Staff Page{% endblock title %}
+
+    {% block content %}
+    {% include "partials/topnav.html" %}
+    <nav class="w3-margin  w3-row-padding">
+        <div class="w3-col l2 ">
+            <div class=" w3-container">
+                
+            </div>
+            
+        </div>
+        <div class="w3-col l10">
+            <table class="w3-table w3-card">
+                <thead class="w3-blue">
+                    <tr>
+                     <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody class="w3-white w3-padding-24">
+                    {% for worker in workers %}
+                    <tr>
+                        <div>
+                        <td class="">
+                            <a href='{% url "dashboard-staff-detail" worker.id  %}' class="w3-button w3-tiny w3-blue">View</a></td>
+                        <td class="">{{worker.username}}</td>
+                        <td class="">{{worker.email}}</td>
+                        <td class="">{{worker.profile.phone}}</td>
+                        </div>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    
+    {% endblock content %}

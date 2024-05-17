@@ -1,0 +1,34 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}login{% endblock title %}
+
+{% block content %}
+
+<div class="w3-container">
+    
+<div class="w3-row">
+    
+<div class="w3-col m6">
+    
+<div class="w3-border w3-white">
+    <h3 class="w3-center">Delete Item </h3>
+    <hr>
+    <div>
+        <h6 class="w3-center ">Are You sure you want to delete</h6>
+    </div>
+    <form method="POST" class="w3-container w3-center">
+        {% csrf_token %}
+        
+
+        <button type="submit" class="w3-button  w3-red">Confirm</button>
+        <a href='{% url "dashboard-product" %}' class="w3-button w3-green">Cancel</a>
+    </form>
+</div>
+    
+</div>
+    
+</div>
+
+</div>
+{% endblock content %}

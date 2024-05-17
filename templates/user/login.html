@@ -1,0 +1,40 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}login{% endblock title %}
+
+{% block content %}
+
+<div class="w3-container">
+    
+<div class="w3-row">
+    
+<div class="w3-col m6">
+
+    {% for message in messages %}
+    {% if message %}
+    <div style="background-color:rgba(0,255,0, 0.2)" class=" w3-opacity w3-section w3-container">
+        <h6>
+            {{message}}
+        </h6>
+    </div>
+    {% endif %}
+    {% endfor %}
+    
+<div class="w3-border w3-white">
+    <h3 class="w3-center">Login</h3>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+    
+</div>
+    
+</div>
+
+</div>
+{% endblock content %}

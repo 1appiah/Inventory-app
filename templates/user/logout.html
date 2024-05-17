@@ -1,0 +1,28 @@
+
+{% extends "partials/base.html" %}
+
+
+{% block title %}Logout{% endblock title %}
+
+{% block content %}
+
+<div class="w3-container">
+    
+<div class="w3-row">
+    
+<div class="w3-col m6">
+    
+<div class="w3-border w3-white">
+    <h3 class="w3-center">Logout</h3>
+    <hr>
+     <p>You have being logged logout</p>
+     <a href='{% url "user-login" %}'
+     class='w3-button w3-center w3-green w3-section w3-block'>login</a>
+</div>
+    
+</div>
+    
+</div>
+
+</div>
+{% endblock content %}
