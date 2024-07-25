@@ -1,0 +1,9 @@
+
+bootstrap4==0.1.0
+crispy-bootstrap4==2023.1
+Django==4.2.5
+django-allauth==0.61.1
+django-crispy-forms==2.1
+django-js-asset==2.1.0
+parso==0.8.3
+Pillow==10.1.0
